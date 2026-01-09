@@ -8,8 +8,8 @@ def android_options():
     options.device_name = "Pixel 8 Pro"
     options.automation_name = "UiAutomator2"
 
-    options.device_name = ""   # adb devices
-    options.udid = ""
+    options.device_name = "41091FDJG004LL"   # adb devices
+    options.udid = "41091FDJG004LL"
 
     options.app_package = "uz.tune.juicer"
     options.app_activity = "uz.tune.juicer.ui.activity.main.MainActivityDefault"
