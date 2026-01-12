@@ -6,6 +6,7 @@ from selenium.common.exceptions import TimeoutException
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
+        self.wait = WebDriverWait(driver, 10)
 
     def find(self, locator, timeout=10):
         return WebDriverWait(self.driver, timeout).until(
@@ -21,3 +22,13 @@ class BasePage:
             return True
         except TimeoutException:
             return False
+
+    def wait_until_not_visible(self, locator, timeout=10) -> bool:
+        try:
+            WebDriverWait(self.driver, timeout).until_not(
+                EC.presence_of_element_located(locator)
+            )
+            return True
+        except TimeoutException:
+            return False
+    

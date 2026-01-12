@@ -4,18 +4,14 @@ from appium.options.android import UiAutomator2Options
 def android_options():
     options = UiAutomator2Options()
 
-    options.platform_name = "Android"
-    options.device_name = "Pixel 8 Pro"
-    options.automation_name = "UiAutomator2"
+    options.set_capability("platformName", "Android")
+    options.set_capability("automationName", "UiAutomator2")
 
-    options.device_name = "41091FDJG004LL"   # adb devices
-    options.udid = "41091FDJG004LL"
+    options.set_capability("deviceName", "Android Device")
 
-    options.app_package = "uz.tune.juicer"
-    options.app_activity = "uz.tune.juicer.ui.activity.main.MainActivityDefault"
-    options.app_wait_activity = "*"
+    options.set_capability("appPackage", "uz.tune.juicer")
+    options.set_capability("appActivity", ".MainActivity")
 
-    options.no_reset = True
-    options.new_command_timeout = 300
+    options.set_capability("noReset", True)
 
     return options
